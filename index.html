@@ -1,87 +1,122 @@
-<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Home Page of Computer Workshop</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #0077b6;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-        }
-        h1 {
-            font-size: 36px;
-        }
-        nav {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 20px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .content {
-            padding: 20px;
-        }
-        .chingum{
-              margin: 0 auto;
-              width: 140px;
-              height: 28px;
-              border: 2px snow;
-              background-color: blue;
-        }
-    </style>
-</head>
-<body>
+  <title>Home page of the website</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+     .options-container {
+      display: flex;
+      margin: 5px;
+    }
+
+    .option {
+      position: relative;
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    .underline {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: rgb(255, 255, 255); 
+      transition: width 0.3s ease;
+    }
+
+    .option:hover .underline {
+      width: 100%;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        background-color: #0077b6;
+        color: #fff;
+        text-align: center;
+        padding: 20px 0;
+    }
+    h1 {
+        font-size: 36px;
+    }
+    nav {
+        background-color: #333;
+        color: #fff;
+        text-align:center;
+        padding: 10px 0;
+    }
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 20px;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .content {
+        padding: 20px;
+    }
+    .chingum{
+          margin: 0 auto;
+          width: 140px;
+          height: 28px;
+          border: 2px snow;
+          background-color: blue;
+    }
+</style>
+  </head>
+<body >
     <header>
         <h1>Welcome to Computer Workshop of 8848</h1>
         <p>“There are no secrets to success. It is the result of preparation, hard work, and learning from failure.”</p>
     </header>
-    <nav>
-        <a href="https://sudeepdeve.github.io/Homepage-/">Home</a>
-        <a href="#">Book</a>
-        <a href="https://sudeepdeve.github.io/About-Page-/">About Us</a>
-        <a href="https://sudeepdeve.github.io/help/">Help</a>
-    </nav>
-    <div class="container">
-        <div class="content">
-            <h2>Featured Courses</h2>
-            <p>Discover or Inhance our Science Knowledge by Our Contents.</p>
-
-            <h2>Latest Experiments</h2>
-            <p>We have made an generator which produces the hydrogen by the electrolysis process.
-            The Making process is also mentioned in the content.One's check it out.</p>
-            
-          <h2>Science Resources</h2>
-         <p>We have a wealth of science resources, including  videos, study materials ,Powerpoints,pdf and also physics simulations games.</p>
-            <br><br>
-             <center>
-             <div class="chingum">
-              <a href="https://sudeepdeve.github.io/Contents/"><Font color="white" size="5px">Get Started</Font></a>
-             </div>
-             </center>
-        </div>
+<nav>
+  <div class="options-container">
+    <div class="option">
+      <a href="https://sudeepdeve.github.io/Homepage-/">Home</a>
+      <div class="underline"></div>
     </div>
+    <div class="option">
+     <a href="https://docs.google.com/document/d/1OYaA-thcao4TFGXWA-SciS0szP9SAK3Q/edit?usp=sharing&ouid=113727619941316590483&rtpof=true&sd=true">Book</a>
+      <div class="underline"></div>
+    </div>
+    <div class="option">
+      <a href="https://sudeepdeve.github.io/About-Page-/">About Us</a>
+      <div class="underline"></div>
+      </div>
+      <div class="option">
+        <a href="https://sudeepdeve.github.io/help/">Help</a>
+        <div class="underline"></div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+    <div class="content">
+        <h2>Featured Courses</h2>
+        <p>Discover or Inhance our Science Knowledge by Our Contents.</p>
+
+        <h2>Latest Experiments</h2>
+        <p>We have made an generator which produces the hydrogen by the electrolysis process.
+        The Making process is also mentioned in the content.One's check it out.</p>
+        
+      <h2>Science Resources</h2>
+     <p>We have a wealth of science resources, including  videos, study materials ,Powerpoints,pdf and also physics simulations games.</p>
+        <br><br>
+         <center>
+         <div class="chingum">
+          <a href="https://sudeepdeve.github.io/Contents/"><Font color="white" size="5px">Get Started</Font></a>
+         </div>
+         </center>
+    </div>
+</div>
 </body>
 </html>
