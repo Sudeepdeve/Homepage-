@@ -1,133 +1,267 @@
+
+<!DOCTYPE html>
 <html>
-<head>
-  <title>Home page of the website</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-     .options-container {
-      display: flex;
-      margin: 5px;
-    }
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Home-Page[Helping Hands]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
 
-    .option {
-      position: relative;
-      margin-right: 20px;
-      cursor: pointer;
-    }
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+}
+.about-wrapper{
+    height: 100vh;
+}
+.about-left{
+    background: #5f8fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.about-left-content > div{
+    background: #5f8fff;
+    padding: 4rem 4rem 2.5rem 5rem;
+    text-align: center;
+}
+.about-left-content{
+    box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+    -webkit-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+    -moz-box-shadow: 0px 0px 18px -1px rgba(0, 0, 0, 0.39);
+}
+.about-img img{
+    display: block;
+    width: 200px;
+}
+.about-img{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    border-radius: 50%;
+    transition: all 0.5s ease-in-out;
+}
+.shadow{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    position: relative;
+    cursor: pointer;
+}
+.shadow::after{
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -20px;
+    height: 7px;
+    width: 50px;
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+    opacity: 0;
+    transition: all 0.6s ease;
+}
+.shadow:hover .about-img{
+    transform: translateY(-10px);
+}
+.shadow:hover::after{
+    opacity: 1;
+}
+.about-left-content h2{
+    font-size: 2rem;
+    margin: 2.2rem 0 0.6rem 0;
+    line-height: 1.2;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #edffec;
+}
+.about-left-content h3{
+    font-size: 1rem;
+    /* margin: 2.2rem 0 0.6rem 0; */
+    line-height: 2;
+    padding-bottom: 1rem;
+ 
+   
+    /* text-transform: uppercase; 
+    font-weight: 300;
+    letter-spacing: 5px;
+    margin-top: 1.2rem;*/
+}
+.icons{
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 0.8rem 0;
+}
+.icons li{
+    list-style-type: none;
+    background: #f36a8d;
+    color: #fff;
+    width: 40px;
+    height: 40px;
+    margin: 0 0.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.icons li:hover{
+    background: #edffec;
+    color: #000;
+}
+.about-right{
+    background: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5rem;
+    text-align: center;
+}
+.about-right h1{
+    font-size: 7rem;
+    text-transform: uppercase;
+}
+.about-right h1 span{
+    color: #dd2d4a;
+}
+.about-right h2{
+    font-weight: 600;
+}
+.about-btns{
+    display: flex;
+    margin: 2rem 0;
+}
+.btn{
+    border: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border: 2px solid #000;
+    border-radius: 20px;
+    padding: 0.55rem 0;
+    width: 130px;
+    font-weight: 600;
+    background: transparent;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+.btn.btn-pink{
+    background: #dd2d4a;
+    color: #fff;
+    border-color: #dd2d4a;
+    transition: all 0.5s ease-in-out;
+}
+.btn.btn-pink:hover{
+    background: transparent;
+    border-color: #dd2d4a;
+    color: #000;
+}
+.btn.btn-white{
+    transition: all 0.5s ease-in-out;
+}
+.btn.btn-white:hover{
+    background: #dd2d4a;
+    border-color: #dd2d4a;
+    color: #fff;
+}
+.about-para p{
+    font-weight: 300;
+    padding: 0.5rem;
+    opacity: 0.8;
+}
 
-    .underline {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background-color: rgb(255, 255, 255); 
-      transition: width 0.3s ease;
+@media screen and (min-width: 992px){
+    .about-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    .option:hover .underline {
-      width: 100%;
+    .about-left{
+        position: relative;
     }
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f2f2f2;
-        margin: 0;
-        padding: 0;
+    .about-left-content{
+        position: absolute;
+        right: -50px;
     }
-    header {
-        background-color: #0077b6;
-        color: #fff;
-        text-align: center;
-        padding: 20px 0;
-    }
-    h1 {
-        font-size: 36px;
-    }
-    nav {
-        background-color: #333;
-        color: #fff;
-        text-align:center;
-        padding: 10px 0;
-    }
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        margin: 0 20px;
-    }
-    .container {
-        max-width: 1200px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .content {
-        padding: 20px;
-    }
-    .chingum {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 16px;
-      font-weight: bold;
-      text-align: center;
-      text-decoration: none;
-      cursor: pointer;
-      border: 2px solid #3498db;
-      color: #3498db;
-      background-color: #fff;
-      border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
-  }
-  .chingum:hover {
-      background-color: #3498db;
-      color: #fff;
-  }
+}
+.our-services{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
 </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
   </head>
-<body >
-    <header>
-        <h1>Welcome to Explore Sudeep</h1>
-        <p>“There are no secrets to success. It is the result of preparation, hard work, and learning from failure.”</p>
-    </header>
-<nav>
-  <div class="options-container">
-    <div class="option">
-      <a href="https://sudeepdeve.github.io/Homepage-/">Home</a>
-      <div class="underline"></div>
-    </div>
-    <div class="option">
-     <a href="https://docs.google.com/document/d/1ofwK72iQYguNAvF2Z3wUkCZL1a3E1v-Q/edit?usp=sharing&ouid=113727619941316590483&rtpof=true&sd=true">Book</a>
-      <div class="underline"></div>
-    </div>
-    <div class="option">
-      <a href="https://sudeepdeve.github.io/About-Page-/">About Us</a>
-      <div class="underline"></div>
-      </div>
-      <div class="option">
-        <a href="https://sudeepdeve.github.io/help/">Help</a>
-        <div class="underline"></div>
-    </div>
-  </div>
-</nav>
-<div class="container">
-    <div class="content">
-        <h2>Featured Courses</h2>
-        <p>Discover or Inhance our Science Knowledge by Our Contents.</p>
+  <body>
+    
+    <div class = "about-wrapper">
+      <div class = "about-left">
+        <div class = "about-left-content">
+          <div>
+            <div class = "shadow">
+              <div class = "about-img">
+                <img src = "logo.webp" alt = "about image">
+              </div>
+            </div>
 
-        <h2>Latest Experiments</h2>
-        <p>We have made an generator which produces the hydrogen by the electrolysis process.
-        The Making process is also mentioned in the content.One's check it out.</p>
+            <h2>Helping Hands</h2>
+            <h1>SQC</h1>
+          </div>
+
+          <ul class = "icons">
+            <li><a href="https://www.facebook.com/sudeep.lamichhane.946/"><i class = "fab fa-facebook-f"></i></a></li>
         
-      <h2>Science Resources</h2>
-     <p>We have a wealth of science resources, including  videos, study materials ,Powerpoints,pdf and also physics simulations games.</p>
-        <br><br>
-         <center>
-         <div class="chingum">
-          <a href="https://sudeepdeve.github.io/Contents/">Get Started</a>
-         </div>
-         </center>
+            <li><a href="https://github.com/Sudeepdeve" target="_blank"><i class="fab fa-github"></i></a></li>
+
+            
+          </ul>
+        </div>
+      </div>
+
+      <div class = "about-right">
+        <h3>Preface</h3>
+        <h5>Name Of the circle:- Helping Hands <br> 
+
+         Date of Formation: August 2, 2024 <br>
+          
+          Team Name: Helping Hands <br>
+          <BR>
+          Overview:
+          Helping Hands is a newly formed Student Quality Circle (SQC) dedicated to enhancing the quality of student life and academic experiences. Our mission is to identify and address key challenges faced by students, promoting a supportive and enriching educational environment.</h2>
+        <div class = "about-btns">
+            <a href="#"><button  type = "button" class = "btn btn-pink">Introduction</button></a>
+            <a href="About.html"><button type = "button" class = "btn btn-white">About</button></a>
+            <a href="#"><button  type = "button" class = "btn btn-pink">Identification Of problem</button></a>
+        </div>
+
+        <div class = "about-para">
+          <p>"Quality is a Journey,not a destination." </p>
+        <br>
+        <h5>Visitor Counter</h5>
+        <!-- hitwebcounter Code START -->
+<a href="https://www.hitwebcounter.com" target="_blank">
+    <img src="https://hitwebcounter.com/counter/counter.php?page=15385868&style=0011&nbdigits=5&type=page&initCount=1" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>                                    
+                                        
+                                            
+
+          </p>
+        </div>
+      </div>
     </div>
-</div>
-</body>
+
+  </body>
 </html>
